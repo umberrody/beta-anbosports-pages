@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安博体育 · 站点介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fce6cf 0%, #f5d6b0 45%, #ebc49a 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            line-height: 1.6;
+            color: #3b2e22;
+        }
+
+        .page-card {
+            max-width: 800px;
+            width: 100%;
+            background-color: rgba(255, 250, 242, 0.92);
+            backdrop-filter: blur(2px);
+            padding: 2.8rem 2.8rem 3rem;
+            border-radius: 40px 16px 40px 16px;
+            box-shadow: 0 20px 30px -12px rgba(110, 70, 40, 0.25),
+                        0 8px 0 0 #dbb18b inset;
+            transition: box-shadow 0.2s ease;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #553e2a;
+            margin-bottom: 0.15rem;
+            border-left: 6px solid #c7976b;
+            padding-left: 1rem;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #7f6246;
+            margin-bottom: 1.6rem;
+            padding-left: 1.6rem;
+            font-style: italic;
+            border-bottom: 1px dashed #d9bca0;
+            padding-bottom: 0.6rem;
+        }
+
+        .intro {
+            font-size: 1.05rem;
+            background: #f7ebe0;
+            padding: 1.2rem 1.6rem;
+            border-radius: 24px 8px 24px 8px;
+            margin-bottom: 2.2rem;
+            color: #4a3828;
+            border: 1px solid #e9d2bb;
+            box-shadow: 0 4px 6px rgba(140, 90, 45, 0.08);
+        }
+
+        .content p {
+            margin-bottom: 1.4rem;
+            text-align: justify;
+            word-break: break-word;
+        }
+
+        .content p:last-of-type {
+            margin-bottom: 2rem;
+        }
+
+        .inset-quote {
+            background: #f2e0ce;
+            border-radius: 20px 4px 20px 4px;
+            padding: 1.2rem 2rem 1rem 2rem;
+            margin: 1.8rem 0 2rem;
+            font-style: normal;
+            border-left: 6px solid #b8865b;
+            color: #3f2f1f;
+            font-size: 0.98rem;
+            box-shadow: inset 0 1px 4px rgba(255, 235, 210, 0.6);
+        }
+
+        .inset-quote::before {
+            content: "📌 提示 · ";
+            font-weight: 600;
+            color: #7a5638;
+        }
+
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.2rem;
+            margin: 1.8rem 0 2rem;
+            padding: 0.2rem 0;
+        }
+
+        .feature-item {
+            background: #f7ede3;
+            padding: 0.3rem 1rem 0.3rem 1.8rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            border: 1px solid #dbb996;
+            color: #3f2d1b;
+            position: relative;
+        }
+
+        .feature-item::before {
+            content: "✦";
+            position: absolute;
+            left: 10px;
+            top: 2px;
+            color: #b07c53;
+            font-size: 0.8rem;
+        }
+
+        .faq-mini {
+            background: #f4e6d8;
+            border-radius: 28px 8px 28px 8px;
+            padding: 1rem 1.8rem 1.4rem;
+            margin: 2.2rem 0 1.8rem;
+            border: 1px solid #dfc4a8;
+        }
+
+        .faq-mini h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            color: #55311b;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .faq-mini h3::after {
+            content: "▾";
+            font-size: 0.7rem;
+            color: #9d7a5a;
+        }
+
+        .faq-mini p {
+            margin-bottom: 0.6rem;
+            font-size: 0.95rem;
+        }
+
+        .faq-mini p strong {
+            color: #6a482b;
+        }
+
+        .link-sentence {
+            background: #f7e9db;
+            padding: 1rem 1.8rem;
+            border-radius: 40px 8px 40px 8px;
+            display: inline-block;
+            margin-top: 0.4rem;
+            font-size: 1rem;
+            border: 1px solid #dbb18b;
+            box-shadow: 0 4px 0 #cfa77d;
+            transition: all 0.2s ease;
+        }
+
+        .link-sentence:hover {
+            background: #f3ddc8;
+            box-shadow: 0 2px 0 #cfa77d;
+            transform: translateY(2px);
+        }
+
+        a {
+            color: #744f2d;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid #dbaa7a;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        a:hover {
+            color: #4f311a;
+            border-bottom-color: #ad7f57;
+        }
+
+        .link-sentence a {
+            border-bottom: 2px solid #b58253;
+        }
+
+        .link-sentence a:hover {
+            border-bottom-color: #7a5432;
+        }
+
+        .footer-note {
+            margin-top: 2.6rem;
+            font-size: 0.85rem;
+            color: #7f644b;
+            border-top: 1px dashed #d0b092;
+            padding-top: 1.2rem;
+            text-align: center;
+            letter-spacing: 0.3px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .page-card {
+                padding: 2rem 1.5rem 2.2rem;
+                border-radius: 28px 8px 28px 8px;
+            }
+            h1 {
+                font-size: 1.8rem;
+                padding-left: 0.7rem;
+            }
+            .subhead {
+                font-size: 0.95rem;
+                padding-left: 1rem;
+            }
+            .intro {
+                font-size: 0.95rem;
+                padding: 1rem 1.2rem;
+            }
+            .inset-quote {
+                padding: 1rem 1.2rem;
+            }
+            .feature-grid {
+                gap: 0.5rem;
+            }
+            .faq-mini {
+                padding: 0.8rem 1.2rem;
+            }
+            .link-sentence {
+                padding: 0.8rem 1.2rem;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-card">
+        <h1>安博体育</h1>
+        <div class="subhead">一份关于站点背景与可信度的简明介绍</div>
+
+        <div class="intro">
+            安博体育（beta-anbosports.com）致力于提供体育资讯、赛事信息与运动文化相关内容。此页面旨在从站点定位、内容边界与信息可信度三个维度，为访问者提供初步了解。
+        </div>
+
+        <div class="content">
+            <p><strong>站点性质与内容方向。</strong> 安博体育聚焦于综合体育领域，涵盖赛事动态、运动科普、数据分析与行业观察。内容团队保持对信息源的交叉核对，在快讯与深度解读之间寻求平衡。站点目前处于迭代阶段，部分功能与板块仍在优化中。</p>
+
+            <p><strong>信息可信与引用原则。</strong> 所有公开发布的内容均标注参考来源或数据出处，涉及赛事结果、排名、规则变动等内容，优先引用官方机构或权威媒体的公开信息。对于分析类文章，明确区分事实陈述与个人观点，避免模糊边界。若发现信息误差，站点会在合理时间内进行修正并注明更新。</p>
+
+            <p><strong>内容边界与用户场景。</strong> 安博体育不涉及博彩引导、非法投注或任何违规推介。站点适合体育爱好者、行业从业者、数据分析用户以及希望系统了解某项运动的读者。讨论范围以体育竞技本身为核心，不介入政治、地域歧视或人身攻击类议题。评论与互动板块遵守基本网络规范。</p>
+        </div>
+
+        <div class="inset-quote">
+            安博体育的内容团队对每篇稿件执行基础事实核查流程，但无法保证第三方链接或引用内容的绝对时效性。建议用户通过多个独立信源交叉验证关键信息。
+        </div>
+
+        <div class="feature-grid">
+            <span class="feature-item">赛事资讯</span>
+            <span class="feature-item">运动科普</span>
+            <span class="feature-item">数据分析</span>
+            <span class="feature-item">行业观察</span>
+            <span class="feature-item">规则解读</span>
+            <span class="feature-item">历史档案</span>
+        </div>
+
+        <div class="faq-mini">
+            <h3>常见疑问摘要</h3>
+            <p><strong>Q：安博体育的信息更新频率？</strong> 主要赛事期间保持每日更新，常规时段每周至少三篇原创或编译内容。重大新闻会以快讯形式跟进。</p>
+            <p><strong>Q：是否可以引用站内内容？</strong> 可以，但请注明来源为安博体育，并附上原文链接。用于商业用途前建议联系站点确认授权细节。</p>
+            <p><strong>Q：如何反馈内容问题？</strong> 站点目前提供基础联系渠道，建议通过页面预留方式提交具体文章标题与疑问，团队会按顺序处理。</p>
+        </div>
+
+        <div class="link-sentence">
+            若希望进一步浏览体育内容，可前往 <a href="https://beta-anbosports.com">安博体育</a> 阅读完整文章与数据专题。
+        </div>
+
+        <div class="footer-note">
+            — 此介绍页基于站点实际情况编写，仅作信息说明，不含任何诱导或承诺 —
+        </div>
+    </div>
+</body>
+</html>
